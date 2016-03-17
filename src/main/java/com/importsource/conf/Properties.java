@@ -104,9 +104,5 @@ public class Properties {
 		return propertiesMap.get(name);
 	}
 
-	protected File getSource() {
-		File myXML = new File("wc.xml");
-		return myXML;
-	}
 
 }

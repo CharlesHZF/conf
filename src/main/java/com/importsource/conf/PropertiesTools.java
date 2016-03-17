@@ -10,8 +10,25 @@ package com.importsource.conf;
  *   开发人员直接通过此类就可以搞定。需要构建一个Properties。这时候需要指定一个路径。
  *   <p>
  *   增加缓存能力，这个很重要。如果不增加缓存，那么每次都要解析节点。这个是性能底下的表现。可以把
- *   <p>
  *   
+ *   另外properties也要静态的，这样降低消耗。
+ *   <p>
+ *   我们的标准格式就是这样的
+ *   <configuration>
+	<property>
+		<name>hadoop.tmp.dir</name>
+		<value>/hadoop</value>
+	</property>
+	<property>
+		<name>fs.default.name</name>
+		<value>hdfs://master:9000</value>
+	</property>
+	<property>
+		<name>dfs.name.dir</name>
+		<value>/hadoop/name</value>
+	</property>
+
+</configuration>
  *   
  * @author Hezf
  *
