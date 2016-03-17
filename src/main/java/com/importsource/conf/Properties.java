@@ -31,7 +31,7 @@ public class Properties {
 	/**
 	 * 默认文件路径
 	 */
-	protected static String path="conf.xml";
+	protected static  String path="conf.xml";
 	
 	/**
 	 * 如果使用这个构造函数，那么就是用默认路径
@@ -45,7 +45,7 @@ public class Properties {
 	 * @param path  客户端指定的目录
 	 */
 	private Properties(String path){
-		this.path=path;
+		Properties.path=path;
 	}
 	
 	private static Properties properties;
@@ -76,9 +76,11 @@ public class Properties {
 			try {
 				Document doc = sr.read(myXML);
 				Element root = doc.getRootElement();
-				for (Iterator<Element> fathers = (Iterator<Element>) root.elementIterator(); fathers.hasNext();) {
+				for (@SuppressWarnings("unchecked")
+				Iterator<Element> fathers = (Iterator<Element>) root.elementIterator(); fathers.hasNext();) {
 
 					Element father = (Element) fathers.next();
+					@SuppressWarnings("unchecked")
 					Iterator<Element> childs = (Iterator<Element>) father.elementIterator();
 					Element nameElement = null;
 					Element valueElement = null;
