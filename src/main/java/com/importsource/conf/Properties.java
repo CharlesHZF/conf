@@ -57,8 +57,15 @@ public class Properties {
 		}
 		return properties;
 	}
+	
+	public static Properties newInstance() {
+		if (properties == null) {
+			properties = new Properties(path);
+		}
+		return properties;
+	}
 
-	public static String get(String name, String defaultValue) {
+	public  String get(String name, String defaultValue)  {
 		String value =getFromCache(name);
 		if(value==null){
 			//没在缓存里边拿

@@ -10,7 +10,7 @@ import org.junit.Test;
 public class PropertiesToolsTest {
 	@Test
 	public void testGet() {
-		Properties p = Properties.newInstance("wc.xml");
+		Properties p = Properties.newInstance("conf.xml");
 		String dir = PropertiesTools.get(p, "hadoop.tmp.dir", null);
 
 		System.out.println(dir);
@@ -27,8 +27,12 @@ public class PropertiesToolsTest {
 
 		System.out.println(dir3);
 		
-		String dir4 = PropertiesTools.get(p, "hadoop.tmp.dir", null);
+		String dir4 = PropertiesTools.get(p, "dfs.name.dir", null);
 
 		System.out.println(dir4);
+		
+		String dir5 = PropertiesTools.get(p, "dfs.name.dir", "sdfsdf");
+
+		System.out.println(dir5);
 	}
 }
