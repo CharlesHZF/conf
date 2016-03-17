@@ -14,10 +14,16 @@ import org.dom4j.io.SAXReader;
  *
  */
 public class Properties {
+	
+	protected String path;
+	
+	public Properties(String path){
+		this.path=path;
+	}
 
 	public String get(String name, String defaultValue) {
 		String value = defaultValue;
-		File myXML = Source.getFile();
+		File myXML = Source.getFile(path);
 		SAXReader sr = new SAXReader();
 		try {
 			Document doc = sr.read(myXML);

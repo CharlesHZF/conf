@@ -14,9 +14,9 @@ public abstract  class Source {
 	private Source() {
 	}
 
-	public static File getFile() {
+	public static File getFile(String path) {
 		if (file == null) {
-			file = new File("wc.xml");
+			file = new File(path);
 		}
 		return file;
 	}
