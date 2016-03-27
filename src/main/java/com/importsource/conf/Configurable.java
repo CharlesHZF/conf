@@ -1,9 +1,6 @@
 package com.importsource.conf;
 /**
- * 可配置
- * 
- * @author duanyy
- * @since 1.6.3.37
+ * @author hezf
  */
 public interface Configurable {
 	/**
