@@ -25,4 +25,15 @@ String minIdle = PropertiesTools.get(p, "dbcp.minIdle", null);
 </configuration>
 ```
 
+###maven依赖方式
+```xml
+
+<dependency>
+	<groupId>com.importsource.conf</groupId>
+	<artifactId>importsource-conf</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+</dependency>
+
+```
+
 
