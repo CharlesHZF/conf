@@ -37,7 +37,9 @@ String minIdle = PropertiesTools.get(p, "dbcp.minIdle", null);
 ```
 
 ###你可以针对每个frame书写一个这样通用的类：
+
 ```java
+
 public class Configuration {
    public static Properties newPropertiesInstance(){
 	   Properties p = com.importsource.conf.Properties.newInstance("email.xml");
