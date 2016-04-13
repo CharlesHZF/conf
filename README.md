@@ -25,4 +25,27 @@ String minIdle = PropertiesTools.get(p, "dbcp.minIdle", null);
 </configuration>
 ```
 
+###maven依赖方式
+```xml
+
+<dependency>
+	<groupId>com.importsource.conf</groupId>
+	<artifactId>importsource-conf</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+</dependency>
+
+```
+
+###你可以针对每个frame书写一个这样通用的类：
+
+```java
+
+public class Configuration {
+   public static Properties newPropertiesInstance(){
+	   Properties p = com.importsource.conf.Properties.newInstance("email.xml");
+	   return p;
+   }
+}
+
+```
 
