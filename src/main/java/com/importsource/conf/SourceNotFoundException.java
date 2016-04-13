@@ -5,8 +5,7 @@ package com.importsource.conf;
  * 
  * @author Hezf
  */
-public class SourceNotFoundException extends Exception {
-	private static final long serialVersionUID = 8410520286876737936L;
+public class SourceNotFoundException extends RuntimeException {
 
 	public SourceNotFoundException() {
 	} 

@@ -4,8 +4,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -19,10 +17,6 @@ import org.dom4j.io.SAXReader;
  *
  */
 public class Properties {
-	/**
-	 * a logger of log4j
-	 */
-	protected static final Logger logger = LogManager.getLogger(Properties.class);
 	/**
 	 * 增加缓存能力
 	 */
@@ -68,8 +62,6 @@ public class Properties {
 	public  String get(String name, String defaultValue)  {
 		String value =getFromCache(name);
 		if(value==null){
-			//没在缓存里边拿
-			logger.info("缓存里没有");
 			value=defaultValue;
 			File myXML = Source.getFile(path);
 			SAXReader sr = new SAXReader();
@@ -101,11 +93,7 @@ public class Properties {
 			} catch (DocumentException e) {
 				e.printStackTrace();
 			}
-		}else{
-			logger.info("缓存里取得");
 		}
-		
-		
 		return value;
 	}
 
